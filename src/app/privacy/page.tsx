@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy Page",
+};
+
 export default function PrivacyPolicy() {
   return (
     <div className="max-w-prose m-auto space-y-3">
