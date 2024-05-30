@@ -1,8 +1,17 @@
 import { delay } from "@/lib/utils";
-import { BlogPost } from "@/models/BlogPost";
+import { BlogPost, BlogPostsResponse } from "@/models/BlogPost";
 
 interface BlogPostPageProps {
   params: { postId: string };
+}
+
+export async function generateStaticParams() {
+  const response = await fetch("https://dummyjson.com/posts");
+  const { posts }: BlogPostsResponse = await response.json();
+
+  return posts.map(({ id }) => {
+    id;
+  });
 }
 
 export default async function BlogPostPage({
